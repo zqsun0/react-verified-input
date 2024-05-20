@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "types": ["node"],
+    "module": "commonjs",
+    "declaration": true,
+    "outDir": "./dist",
+    "jsx": "react-jsx",
+    "baseUrl": "./",
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
+}

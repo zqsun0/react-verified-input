@@ -1,0 +1,61 @@
+/* 最外层容器样式 */
+.VerifiedInput-container {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle; /* 保持与其他元素垂直对齐 */
+  width: 100%;
+}
+
+/* 内部使用 flex 布局排列输入框和图标 */
+.VerifiedInput-content {
+  display: flex;
+  align-items: center; /* 确保输入框和图标垂直对齐 */
+}
+
+.VerifiedInput_root {
+  padding-right: 40px;
+}
+
+/* 夜晚模式 */
+@media (prefers-color-scheme: dark) {
+  .VerifiedInput_root {
+    background-color: white;
+    color: black;
+  }
+}
+
+.VerifiedInput_root[data-error="true"] {
+  border-color: red;
+}
+
+/* <input type="number">的 spin button（上下的箭头按钮）
+   在 CSS 中隐藏 */
+.VerifiedInput_hiddenArrow[type="number"]::-webkit-outer-spin-button,
+.VerifiedInput_hiddenArrow[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.VerifiedInput_disabled {
+  background-color: #e5e5e5 !important;
+}
+
+.VerifiedInput_errorMessage {
+  color: red;
+}
+
+.VerifiedInput-icon-wrapper {
+  position: absolute;
+  right: 0;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.VerifiedInput_showPasswordEyes {
+  display: inline-block;
+  position: relative;
+  right: 30px;
+  margin-right: -16px;
+  cursor: pointer;
+}

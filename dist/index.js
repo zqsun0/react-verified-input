@@ -34,7 +34,7 @@ var jsx_runtime_1 = require("react/jsx-runtime");
 var clsx_1 = require("clsx");
 var react_1 = require("react");
 var ai_1 = require("react-icons/ai");
-require("./index.css");
+require("../style/index.css");
 /**
  * 表单验证的输入组件
  * @param value 输入框的值

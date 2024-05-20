@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "files": [
     "dist",
+    "style",
     "src/**/*.css",
     "src/**/*.scss",
     ".babelrc.json",

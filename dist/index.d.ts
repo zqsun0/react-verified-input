@@ -1,5 +1,5 @@
 import { ChangeEvent, InputHTMLAttributes } from "react";
-import "./index.css";
+import "../style/index.css";
 /**
  *  value 和 onChange 为必传参数
  *  maxVal 最大值

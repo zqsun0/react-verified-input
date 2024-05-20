@@ -16,7 +16,7 @@ import {
   useState,
 } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import "./index.css";
+import "../style/index.css";
 
 /**
  *  value 和 onChange 为必传参数

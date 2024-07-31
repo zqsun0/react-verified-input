@@ -36,6 +36,7 @@ interface VerifiedInputProp extends InputHTMLAttributes<HTMLInputElement> {
     errorMessageClassName?: string;
     errorInputClassName?: string;
     isShowPassword?: boolean;
+    startIcon?: JSX.Element;
     endIcon?: JSX.Element;
 }
 /**
@@ -57,9 +58,10 @@ interface VerifiedInputProp extends InputHTMLAttributes<HTMLInputElement> {
  * @param errorInputClassName 错误输入框的样式类名
  * @param isShowPassword 在密码模式下，是否可以看密码
  * @param isShowEndIcon 是否显示结束图标
+ * @param startIcon 开始图标
  * @param endIcon 结束图标
  * @param prop
  * @returns 表单验证的输入组件
  */
-declare const VerifiedInput: ({ value, onChange, maxVal, isMinValueEnabled, minVal, isInteger, isShowArrow, isZeroStart, type, enableValidation, validationFunction, buttonTouchedFlag, errorMessage, errorMessageClassName, errorInputClassName, isShowPassword, endIcon, ...prop }: VerifiedInputProp) => import("react/jsx-runtime").JSX.Element;
+declare const VerifiedInput: ({ value, onChange, maxVal, isMinValueEnabled, minVal, isInteger, isShowArrow, isZeroStart, type, enableValidation, validationFunction, buttonTouchedFlag, errorMessage, errorMessageClassName, errorInputClassName, isShowPassword, startIcon, endIcon, ...prop }: VerifiedInputProp) => import("react/jsx-runtime").JSX.Element;
 export default VerifiedInput;

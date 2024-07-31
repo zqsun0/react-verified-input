@@ -70,6 +70,8 @@ interface VerifiedInputProp extends InputHTMLAttributes<HTMLInputElement> {
   errorInputClassName?: string;
   // 在密码模式下，是否可以看密码
   isShowPassword?: boolean;
+  // 开始图标
+  startIcon?: JSX.Element;
   // 结束图标
   endIcon?: JSX.Element;
 }
@@ -93,6 +95,7 @@ interface VerifiedInputProp extends InputHTMLAttributes<HTMLInputElement> {
  * @param errorInputClassName 错误输入框的样式类名
  * @param isShowPassword 在密码模式下，是否可以看密码
  * @param isShowEndIcon 是否显示结束图标
+ * @param startIcon 开始图标
  * @param endIcon 结束图标
  * @param prop
  * @returns 表单验证的输入组件
@@ -131,6 +134,8 @@ const VerifiedInput = ({
   errorInputClassName,
   // 在密码模式下，是否可以看密码
   isShowPassword = false,
+  // 开始图标
+  startIcon,
   // 结束图标
   endIcon,
   ...prop
@@ -274,6 +279,15 @@ const VerifiedInput = ({
   return (
     <div className="VerifiedInput-container">
       <div className="VerifiedInput-content">
+        {/* start icon start */}
+        {startIcon && (
+          <div className="VerifiedInput-icon-wrapper VerifiedInput-icon-wrapper--start">
+            {cloneElement(startIcon, {
+              className: clsx("VerifiedInput_icon", startIcon.props.className),
+            })}
+          </div>
+        )}
+        {/* start icon end */}
         <input
           {...prop}
           value={value}

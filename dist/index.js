@@ -54,6 +54,7 @@ require("../style/index.css");
  * @param errorInputClassName 错误输入框的样式类名
  * @param isShowPassword 在密码模式下，是否可以看密码
  * @param isShowEndIcon 是否显示结束图标
+ * @param startIcon 开始图标
  * @param endIcon 结束图标
  * @param prop
  * @returns 表单验证的输入组件
@@ -110,8 +111,10 @@ var VerifiedInput = function (_a) {
     _k = _a.isShowPassword, 
     // 在密码模式下，是否可以看密码
     isShowPassword = _k === void 0 ? false : _k, 
+    // 开始图标
+    startIcon = _a.startIcon, 
     // 结束图标
-    endIcon = _a.endIcon, prop = __rest(_a, ["value", "onChange", "maxVal", "isMinValueEnabled", "minVal", "isInteger", "isShowArrow", "isZeroStart", "type", "enableValidation", "validationFunction", "buttonTouchedFlag", "errorMessage", "errorMessageClassName", "errorInputClassName", "isShowPassword", "endIcon"]);
+    endIcon = _a.endIcon, prop = __rest(_a, ["value", "onChange", "maxVal", "isMinValueEnabled", "minVal", "isInteger", "isShowArrow", "isZeroStart", "type", "enableValidation", "validationFunction", "buttonTouchedFlag", "errorMessage", "errorMessageClassName", "errorInputClassName", "isShowPassword", "startIcon", "endIcon"]);
     /* START: state*/
     // 是否被点过，默认没有被点过
     var _l = (0, react_1.useState)(false), isTouched = _l[0], setIsTouched = _l[1];
@@ -240,7 +243,9 @@ var VerifiedInput = function (_a) {
         setShowPasswordText(function (v) { return !v; });
     };
     /* END: function*/
-    return ((0, jsx_runtime_1.jsx)("div", { className: "VerifiedInput-container", children: (0, jsx_runtime_1.jsxs)("div", { className: "VerifiedInput-content", children: [(0, jsx_runtime_1.jsx)("input", __assign({}, prop, { value: value, 
+    return ((0, jsx_runtime_1.jsx)("div", { className: "VerifiedInput-container", children: (0, jsx_runtime_1.jsxs)("div", { className: "VerifiedInput-content", children: [startIcon && ((0, jsx_runtime_1.jsx)("div", { className: "VerifiedInput-icon-wrapper VerifiedInput-icon-wrapper--start", children: (0, react_1.cloneElement)(startIcon, {
+                        className: (0, clsx_1.clsx)("VerifiedInput_icon", startIcon.props.className),
+                    }) })), (0, jsx_runtime_1.jsx)("input", __assign({}, prop, { value: value, 
                     // 处理是输入普通文本还是数字
                     onChange: type === "number"
                         ? handleInputNumberOnChange
